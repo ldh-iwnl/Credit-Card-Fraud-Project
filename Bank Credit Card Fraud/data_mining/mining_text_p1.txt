@@ -1,0 +1,41 @@
+Page 1:
+Here comes to the data analytic part 
+As seen from EDA, we have large dataset with only a few features
+
+Page 2:
+Here the first model we try is SVM. 
+It has the merit of capturing nonlinearity, also resilient to outliers
+Besides, it is distanced based method require feature scaling and perhaps label balancing
+so we choose small C due to time complexity concerns and gaussian kernel with gamma 0.5
+
+Page 3:
+We first use the whole unbalanced dataset, split training set by the given proportion and build the model based on that, and evaluated on the whole set
+As seen results are good, except recall still have space for improvement
+
+Page 4:
+As we shrink the training set proportion, the performance gets slightly worse
+
+Page 5:
+We rebuild the model, by first downsampling the data to balance the labels, split from this downsampled set to get training data and build the model, still evaluate on the whole set
+
+Here we see the trade off. After balancing we have higher recall, meaning the model is more capable of capturing fraud cases. but as the sample size gets smaller after downsampling, Overall performance gets worse especially the precision
+
+Page 6 However, one important assumption about svm  is that data is separable by a hyperplane or a boundary which might not hold true in practice, hence we think knn might be a better alternative as it trains faster, its more suitable for clustering work, also perform better on low dimensional dataset
+
+Page 7:
+Like before we rescale and downsample the dataset, and then do the train test split, and here evaluated on the test size, results is quite satisfactory, at least better than svm
+
+Page 8:
+Here we evaluate it on the whole set, result still good except precision drops down a little bit
+
+Page 9:
+Even if we push down the training proportion, result does not get worse except only a few more false positive
+
+We can see knn already gives us fairly good prediction performance. However if we want to explore more about each feature importance and their inductiveness, we should try tree-based method instead.
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+Page 1:
+1. Since our data contains fewer attributes, the data dimensionality is low. 
+2. The size of our dataset is large, although the dataset is imbalanced, there are still a large amount of fraud records. 
+
+Page 2:
+As we all know, K-NN is relatively more suitable for clustering works and performs better on low-dimension dataset, while high-dimension data containing larger distance between instances. So we tried K-NN for detecting the frauds and making prediction at first. 
+
+Page 3:
+By iteratively try acceptable k values, we found the best k for our model and trained the model using balanced and scaled trainset. The evaluating is based on the prediction on the whole dataset. Not bad right? 
+
+Page 4:
+And check its performance on the original unbalanced model, still good. However, there’s still some problems. 
+
+Page 5:
+As the size of train-set decreases, the performance of this model falls as well. If we need to extract some new features from a few new instances, the tree-based models will be much more useful. 
+
+Page 6:
+One widely used model is random forest, which bootstrapping instances to build multiple decision trees and vote for the result. Thanks to some characteristics of this model, we do not need to do scaling or balancing sampling to the dataset. And as we thought, the model performs amazingly well. 
+
+Page 7:
+The performance is just nearly perfect, but what about the problem we just mentioned? Let’s try to provide only a small part of data and see what happens:
+
+Page 8:
+Fine, still amazing. Because random forest is not sensitive to the missing part of the dataset, it can extract valuable features from little instances. Now we have a model with high accuracy, what do we need next?
+
+Page 9:
+Check the attributes importance exported from the model, we can verify the correlation of the variables mentioned in the EDA process. But how do we explain the attributes importance? 
+
+Page 10:
+We then used decision tree - a very interpretable algorithm - to help us explore the relationship between these attributes and the fraud records. In another words - how do these attributes effect the results of classification. To simplify this diagram a bit, we get this. 
+
+Page 11:
+Summarize the five rules to fraud cases, they should be merchant abuse, stealing, deception, leaked account, leaked pin. 
+
